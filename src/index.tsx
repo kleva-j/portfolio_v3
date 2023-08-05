@@ -1,4 +1,5 @@
 import '@/styles/index.css';
+import '@/styles/fonts.css';
 import '@fontsource/inter';
 
 import React from 'react';

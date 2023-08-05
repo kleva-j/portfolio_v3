@@ -3,6 +3,10 @@ module.exports = {
   darkMode: ['class'],
   content: ['./components/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   theme: {
+    fontFamily: {
+      sans: 'var(--font-sans)',
+      mono: 'var(--font-mono)',
+    },
     container: {
       center: true,
       padding: '2rem',

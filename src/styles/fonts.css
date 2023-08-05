@@ -1,0 +1,99 @@
+/* ===================  TTF  ========================== */
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/SFMono-Medium.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/SFMono-MediumItalic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/SFMono-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/SFMono-RegularItalic.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/SFMono-Semibold.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/SFMono-SemiboldItalic.ttf') format('ttf');
+}
+
+/* ==================== WOFF =========================== */
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/SFMono-Medium.woff2') format('woff2'), url('/fonts/SFMono-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: italic;
+  font-weight: 400;
+  src: url('/fonts/SFMono-MediumItalic.woff2') format('woff2'), url('/fonts/SFMono-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/SFMono-Regular.woff2') format('woff2'), url('/fonts/SFMono-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/SFMono-RegularItalic.woff2') format('woff2'), url('/fonts/SFMono-RegularItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/SFMono-Semibold.woff2') format('woff2'), url('/fonts/SFMono-Semibold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SF Mono';
+  font-display: auto;
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/SFMono-SemiboldItalic.woff2') format('woff2'), url('/fonts/SFMono-SemiboldItalic.woff') format('woff');
+}
