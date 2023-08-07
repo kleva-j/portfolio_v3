@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   top: 0;
   bottom: 0;
   left: 0;
@@ -10,13 +10,13 @@
 }
 
 .item {
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   position: absolute;
 }
 
 .item-1 {
-  background-color: rgb(250, 87, 103);
+  border: 2px solid rgb(250, 87, 103);
   top: 0;
   left: 0;
   z-index: 1;
@@ -24,14 +24,14 @@
 }
 
 .item-2 {
-  background-color: rgb(121, 68, 228);
+  border: 2px solid rgb(121, 68, 228);
   top: 0;
   right: 0;
   animation: item-2_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
 }
 
 .item-3 {
-  background-color: rgb(27, 145, 247);
+  border: 2px solid rgb(27, 145, 247);
   bottom: 0;
   right: 0;
   z-index: 1;
@@ -39,7 +39,7 @@
 }
 
 .item-4 {
-  background-color: rgb(250, 194, 76);
+  border: 2px solid rgb(250, 194, 76);
   bottom: 0;
   left: 0;
   animation: item-4_move 1.8s cubic-bezier(.6,.01,.4,1) infinite;
@@ -51,15 +51,15 @@
   }
 
   25% {
-    transform: translate(0, 25px)
+    transform: translate(0, 15px)
   }
 
   50% {
-    transform: translate(25px, 25px)
+    transform: translate(15px, 15px)
   }
 
   75% {
-    transform: translate(25px, 0)
+    transform: translate(15px, 0)
   }
 }
 
@@ -69,15 +69,15 @@
   }
 
   25% {
-    transform: translate(-25px, 0)
+    transform: translate(-15px, 0)
   }
 
   50% {
-    transform: translate(-25px, 25px)
+    transform: translate(-15px, 15px)
   }
 
   75% {
-    transform: translate(0, 25px)
+    transform: translate(0, 15px)
   }
 }
 
@@ -87,15 +87,15 @@
   }
 
   25% {
-    transform: translate(0, -25px)
+    transform: translate(0, -15px)
   }
 
   50% {
-    transform: translate(-25px, -25px)
+    transform: translate(-15px, -15px)
   }
 
   75% {
-    transform: translate(-25px, 0)
+    transform: translate(-15px, 0)
   }
 }
 
@@ -105,14 +105,14 @@
   }
 
   25% {
-    transform: translate(25px, 0)
+    transform: translate(15px, 0)
   }
 
   50% {
-    transform: translate(25px, -25px)
+    transform: translate(15px, -15px)
   }
 
   75% {
-    transform: translate(0, -25px)
+    transform: translate(0, -15px)
   }
 }

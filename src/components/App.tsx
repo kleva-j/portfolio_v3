@@ -1,15 +1,13 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { MainContent } from '@/components/MainContent';
 
 function App() {
   return (
     <ErrorBoundary fallback={<div>Something went wrong</div>}>
-      <section className="">
-        <Header />
-        <Footer />
-      </section>
+      <Header />
+      <MainContent />
     </ErrorBoundary>
   );
 }
