@@ -7,7 +7,7 @@ const { hero } = siteConfig.content;
 
 export const Hero = () => (
   <motion.section
-    className="h-screen flex flex-col w-full max-w-4xl items-start justify-center"
+    className="h-screen min-h-screen flex flex-col w-full max-w-[1000px] mx-auto items-start justify-center"
     initial="hidden"
     animate="visible"
     variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
