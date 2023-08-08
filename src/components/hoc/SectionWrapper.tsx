@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 
-export const SectionWrapper = (Component: () => JSX.Element, idName?: string) =>
+import { cn } from '@/libs/utils';
+
+export const SectionWrapper = (Component: () => JSX.Element, idName?: string, className?: string) =>
   function Hoc() {
     return (
       <motion.section
@@ -11,7 +13,7 @@ export const SectionWrapper = (Component: () => JSX.Element, idName?: string) =>
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.25 }}
-        className="sm:px-16 px-6 sm:py-16 py-10 max-w-[90rem] mx-auto relative z-0"
+        className={cn('w-full py-[100px] max-w-4xl relative z-0 [counter-reset:section]', className)}
       >
         <span className="hash-span" id={idName}>
           &nbsp;

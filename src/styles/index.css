@@ -5,7 +5,8 @@
 @layer base {
   :root {
     /* --background: 0 0% 100%; */
-    --background: 216, 65%, 11%, 0.85;
+    /* --background: 216, 65%, 11%, 0.85; */
+    --background: 216 65% 11%;
     --foreground: 222.2 84% 4.9%;
 
     --muted: 210 40% 96.1%;
@@ -43,6 +44,7 @@
   .dark {
     /* color: #0a182ed9; */
     /* color: #ccd6f6; */
+    /* color: hsl(216, 65%, 11%); */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
