@@ -40,11 +40,13 @@ export const About = SectionWrapper(
             </ul>
           </div>
           <div className="relative max-w-[300px] my-[50px] md:my-0 mx-auto md:ml-auto">
-            <div className="border border-transparent rounded aspect-square sm:max-w-[300px] overflow-hidden">
-              <figure>
-                <img src="./michael.jpg" className="object-contain relative -top-[10px]" alt="profile pic" />
-              </figure>
-            </div>
+            <figure className="border border-transparent rounded aspect-square sm:max-w-[300px] overflow-hidden">
+              <img
+                src="./michael.jpg"
+                className="object-contain relative -top-[10px] filter grayscale hover:grayscale-0 cursor-pointer transition-all duration-500"
+                alt="profile pic"
+              />
+            </figure>
           </div>
         </div>
       </motion.div>
