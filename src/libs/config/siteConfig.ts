@@ -2,10 +2,10 @@ export const siteConfig = {
   title: 'Portfolio v3',
   description: 'My personal portfolio',
   navlinks: [
-    { title: 'about', href: '/#about', label: 'About' },
-    { title: 'experience', href: '/#jobs', label: 'Experience' },
-    { title: 'work', href: '/#work', label: 'Work' },
-    { title: 'contact', href: '/#contact', label: 'Contact' },
+    { title: 'about', href: '/portfolio_v3/#about', label: 'About' },
+    { title: 'experience', href: '/portfolio_v3/#jobs', label: 'Experience' },
+    { title: 'work', href: '/portfolio_v3/#work', label: 'Work' },
+    { title: 'contact', href: '/portfolio_v3/#contact', label: 'Contact' },
   ],
   content: {
     hero: {

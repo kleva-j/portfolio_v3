@@ -14,7 +14,7 @@ export const TabContent = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2, type: 'tween' }}
+        transition={{ duration: 0.5, type: 'tween' }}
         className="min-h-max"
         role="tabpanel"
       >
@@ -29,7 +29,7 @@ export const TabContent = () => {
           {description.map((text, index) => (
             <li
               key={index}
-              className="relative pl-[30px] pb-2.5 text-[#8892B0] before:[content:'▹'] before:absolute before:left-0 before:text-teal-500"
+              className="relative pl-[30px] pb-2.5 text-[#8892B0] before:[content:'▹'] before:absolute before:left-0 before:text-teal-500 text-sm/6 md:text-base"
             >
               {text}
             </li>
