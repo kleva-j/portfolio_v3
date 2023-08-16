@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Folder } from 'lucide-react';
 import { FC } from 'react';
 
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/Card';
 import { Work } from '@/libs/types';
 
 export const ProjectList: FC<{ works: Work[] }> = ({ works }) => (
