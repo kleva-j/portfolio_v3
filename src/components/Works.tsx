@@ -4,7 +4,7 @@ import { FeaturedCard } from '@/components/FeaturedCard';
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
 import { useFetch } from '@/libs/hooks';
 
-const url = import.meta.env.VITE_API_URL ?? '';
+const url = import.meta.env.VITE_API_URL ?? 'http://localhost:3002/api/Projects/';
 
 export const Works = SectionWrapper(
   () => {
