@@ -77,6 +77,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         layout: 'repeat(12, 1fr)',
+        autofill: 'repeat(auto-fill, minmax(300px, 1fr))',
+        autofill_sm: 'repeat(auto-fill, minmax(250px, 1fr))',
       },
     },
   },
