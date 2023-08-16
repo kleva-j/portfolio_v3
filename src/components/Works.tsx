@@ -1,7 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import { FeaturedCard } from '@/components/FeaturedCard';
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
+import { ProjectList } from '@/components/ProjectList';
 import { useFetch } from '@/libs/hooks';
 
 const url = import.meta.env.VITE_API_URL ?? 'http://localhost:3002/api/Projects/';
@@ -20,6 +19,7 @@ export const Works = SectionWrapper(
             <FeaturedCard key={item.title} {...item} />
           ))}
         </ul>
+        <ProjectList works={works} />
       </div>
     );
   },
