@@ -15,7 +15,7 @@ export const SectionWrapper = (Component: () => JSX.Element, idName?: string, cl
         viewport={{ once: true, amount: 0.25 }}
         className={cn('w-full py-[100px] max-w-4xl relative z-0', className)}
       >
-        <span className="hash-span" id={idName}>
+        <span className="relative -top-14" id={idName}>
           &nbsp;
         </span>
         <Component />

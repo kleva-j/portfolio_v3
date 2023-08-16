@@ -12,3 +12,13 @@ export interface ITabContext {
   selectedTab: TabItem;
   tablist: TabItem[];
 }
+
+export type Work = {
+  id: string;
+  title: string;
+  url: string;
+  slug: string;
+  tagline: string;
+  banner_img: string;
+  github_url: string;
+};
