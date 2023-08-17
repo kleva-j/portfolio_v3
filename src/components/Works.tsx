@@ -3,11 +3,11 @@ import { SectionWrapper } from '@/components/hoc/SectionWrapper';
 import { ProjectList } from '@/components/ProjectList';
 import { useFetch } from '@/libs/hooks';
 
-const url = `${import.meta.env.VITE_API_URL}/api/Projects/`;
+const url = import.meta.env.VITE_API_URL;
 
 export const Works = SectionWrapper(
   () => {
-    const { data: works } = useFetch(url);
+    const { data: works } = useFetch(url + '/api/Projects/');
 
     return (
       <div>
