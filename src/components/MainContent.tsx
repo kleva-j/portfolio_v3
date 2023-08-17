@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { About } from '@/components/About';
+import { Contact } from '@/components/Contact';
 import { Experience } from '@/components/Experience';
 import { Hero } from '@/components/Hero';
 import { Footer } from '@/components/layout/Footer';
@@ -14,6 +15,7 @@ export const MainContent = () => {
         <About />
         <Experience />
         <Works />
+        <Contact />
       </main>
       <Footer />
     </motion.section>
