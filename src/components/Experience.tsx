@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { createContext, useContext, useState } from 'react';
 
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
@@ -23,13 +22,7 @@ export const Experience = SectionWrapper(
     const [selectedTab, setSelectedTab] = useState(tablist[0]);
 
     return (
-      <motion.div
-        animate="visible"
-        initial={{ opacity: 0 }}
-        viewport={{ once: true }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.25, duration: 1.9 }}
-      >
+      <div>
         <h2 className="relative flex items-center before:relative [counter-increment:section] before:[content:'0'counter(section)'.'] before:text-teal-500 before:mr-[5px] mt-[10px] mb-[40px] whitespace-nowrap text-2xl before:font-mono font-semibold text-[#ccd6f6] after:content-[''] after:ml-[10px] after:w-full after:max-w-[300px] after:h-px after:relative after:block after:bg-[#233554]">
           Where I&rsquo;ve Worked
         </h2>
@@ -39,7 +32,7 @@ export const Experience = SectionWrapper(
             <TabContent />
           </TabContext.Provider>
         </div>
-      </motion.div>
+      </div>
     );
   },
   'jobs',

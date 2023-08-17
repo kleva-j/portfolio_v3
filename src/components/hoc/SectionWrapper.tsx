@@ -6,13 +6,11 @@ export const SectionWrapper = (Component: () => JSX.Element, idName?: string, cl
   function Hoc() {
     return (
       <motion.section
-        variants={{
-          hidden: {},
-          show: { transition: { delayChildren: 0 } },
-        }}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.25 }}
+        animate="visible"
+        initial={{ opacity: 0 }}
+        viewport={{ once: true }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.25, duration: 1.9 }}
         className={cn('w-full py-[100px] max-w-4xl relative z-0', className)}
       >
         <span className="relative -top-14" id={idName}>
