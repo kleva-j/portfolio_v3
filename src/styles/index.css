@@ -4,8 +4,6 @@
 
 @layer base {
   :root {
-    /* --background: 0 0% 100%; */
-    /* --background: 216, 65%, 11%, 0.85; */
     --background: 216 65% 11%;
     --foreground: 222.2 84% 4.9%;
 
@@ -42,9 +40,6 @@
   }
 
   .dark {
-    /* color: #0a182ed9; */
-    /* color: #ccd6f6; */
-    /* color: hsl(216, 65%, 11%); */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -89,7 +84,6 @@
     width: 100%;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    /* color: #020c1bb3; */
   }
 
   body {

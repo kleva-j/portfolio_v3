@@ -8,10 +8,11 @@ const { hero } = siteConfig.content;
 export const Hero = () => (
   <motion.section
     className="h-screen min-h-screen flex flex-col w-full max-w-[1000px] mx-auto items-start justify-center"
-    initial="hidden"
     animate="visible"
-    variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
-    transition={{ delay: 0.25 }}
+    initial={{ opacity: 0 }}
+    viewport={{ once: true }}
+    whileInView={{ opacity: 1 }}
+    transition={{ delay: 0.25, duration: 1.9 }}
   >
     <motion.h1
       initial="hidden"
@@ -25,7 +26,7 @@ export const Hero = () => (
       initial="hidden"
       animate="show"
       variants={slideIn('up', 'spring', 0.02 * 1, 1.5)}
-      className="text-[70px] font-bold text-[#ccd6f6] tracking-tight mt-1"
+      className="text-[40px] md:text-[70px] font-bold text-[#ccd6f6] tracking-tight mt-1"
     >
       {hero.headText[0]}
     </motion.h2>
@@ -33,7 +34,7 @@ export const Hero = () => (
       initial="hidden"
       animate="show"
       variants={slideIn('up', 'spring', 0.02 * 2, 1.5)}
-      className="text-[70px] -mt-[20px] font-bold text-[#8892b0] tracking-tight"
+      className="text-[40px] md:text-[70px] leading-none mb-4 md:mb-5 font-bold text-[#8892b0] tracking-tight"
     >
       {hero.headText[1]}
     </motion.h3>
