@@ -1,12 +1,15 @@
 import { motion, useInView } from 'framer-motion';
 import { FC, useRef } from 'react';
 
+import { IAppContext, UseAppContext } from '@/components/App';
 import { Navbar } from '@/components/layout/Navbar';
+import { ToggleBar } from '@/components/layout/sidenav/ToggleBar';
 import { Logo } from '@/components/ui/Logo';
 
 export const Header: FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref);
+  const { isOpen, toggleOpen } = UseAppContext() as IAppContext;
 
   return (
     <>
@@ -19,6 +22,7 @@ export const Header: FC = () => {
         <nav className="flex justify-between items-center w-full">
           <Logo />
           <Navbar />
+          <ToggleBar toggleOpen={toggleOpen} isOpen={isOpen} />
         </nav>
       </motion.header>
     </>

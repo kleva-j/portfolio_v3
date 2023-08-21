@@ -9,7 +9,7 @@ import { ITabContext } from '@/libs/types';
 const { experiences } = siteConfig.content;
 const tablist = Object.values(experiences);
 
-const TabContext = createContext<ITabContext | null>(null);
+export const TabContext = createContext<ITabContext | null>(null);
 
 export function UseTabContext() {
   const context = useContext(TabContext);
