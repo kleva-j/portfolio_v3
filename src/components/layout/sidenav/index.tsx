@@ -11,6 +11,19 @@ interface SideNavProps {
   isOpen: boolean;
 }
 
+const variants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: { y: { stiffness: 1000, velocity: -100 } },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: { y: { stiffness: 1000 } },
+  },
+};
+
 export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
   const [containerRef, { height, width }] = useElementSize();
 
@@ -41,18 +54,7 @@ export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
           {navlinks.map(({ title, href, label }) => (
             <motion.li
               key={title}
-              variants={{
-                open: {
-                  y: 0,
-                  opacity: 1,
-                  transition: { y: { stiffness: 1000, velocity: -100 } },
-                },
-                closed: {
-                  y: 50,
-                  opacity: 0,
-                  transition: { y: { stiffness: 1000 } },
-                },
-              }}
+              variants={variants}
               onClick={toggleOpen}
               className="[counter-increment:section] before:[content:'0'counter(section)'.'] before:text-teal-500 text-[#ccd6f6] text-sm flex flex-col gap-y-1.5 cursor-pointer hover:text-teal-400"
               whileHover={{ scale: 1.1 }}
@@ -61,6 +63,14 @@ export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
               <a href={href}>{label}</a>
             </motion.li>
           ))}
+          <motion.div variants={variants} className="mt-4">
+            <a
+              href="#"
+              className="font-mono text-teal-400 bg-transparent text-base outline-none w-fit border-2 border-teal-400 rounded-lg py-3 px-5 font-medium hover:bg-transparent hover:text-teal-400 cursor-pointer"
+            >
+              Resume
+            </a>
+          </motion.div>
         </motion.ul>
         <motion.div
           animate={isOpen ? 'open' : 'closed'}
