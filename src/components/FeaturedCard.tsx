@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { Work } from '@/libs/types';
 
 export const FeaturedCard: FC<Work> = (props) => {
-  const { title, banner_img, github_url, url } = props;
+  const { title, tagline, banner_img, github_url, url } = props;
 
   return (
     <motion.li
@@ -27,10 +27,7 @@ export const FeaturedCard: FC<Work> = (props) => {
           </a>
         </h3>
         <div className="relative rounded-sm text-[#a8b2d1] text-base py-5 md:p-[25px] bg-transparent md:bg-[#112240]">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius dolor voluptate facere ab quos voluptas,
-            incidunt recusandae! Expedita debitis excepturi dolore libero. Et, cumque itaque.
-          </p>
+          <p>{tagline}</p>
         </div>
         <ul className="flex flex-wrap justify-start text-[#a8b2d1] md:group-odd/item:justify-end my-2.5 md:mt-6">
           {['React', 'Tailwind', 'Express', 'Spotify API', 'Heroku'].map((item) => (

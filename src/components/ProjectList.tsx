@@ -18,11 +18,13 @@ export const ProjectList: FC<{ works: Work[] }> = ({ works }) => (
       Other Noteworthy Projects
     </h2>
     <ul className="grid grid-cols-autofill_sm lg:grid-cols-autofill gap-6 mt-[50px]">
-      {works.slice(4).map((item) => (
+      {works.slice(3).map((item) => (
         <Card key={item.title} className="group hover:-translate-y-1.5 hover:shadow-xl transition duration-300">
-          <CardHeader className="flex-row p-0 justify-between mb-[35px]">
+          <CardHeader className="flex-row p-0 justify-between mb-[35px] z-10">
             <Folder size={40} strokeWidth={1.8} absoluteStrokeWidth className="text-teal-400" />
-            <ExternalLink size={20} className="transition-colors duration-300 hover:text-teal-400" />
+            <a href={item.url} target="_blank" rel="noreferrer">
+              <ExternalLink size={20} className="transition-colors duration-300 hover:text-teal-400" />
+            </a>
           </CardHeader>
           <CardContent className="mb-[20px]">
             <h3 className="text-[20px] mb-2.5 leading-[1.1] font-semibold">
