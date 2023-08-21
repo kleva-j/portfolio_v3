@@ -30,9 +30,11 @@ export const siteConfig = {
         companyName: 'Aduro Creative',
         date: { from: 'April', to: 'Febuary 2021' },
         description: [
-          "Engineered and improved major features of Starry's customer-facing Android web app using ES6, Handlebars, Backbone, Marionette, and CSS",
-          'Proposed and implemented scalable solutions to issues identified with cloud services and applications responsible for communicating with the Starry Station internet router',
-          'Collaborated with designers and other developers to ensure thoughtful and consistent user experiences across Starry’s iOS and Android mobile apps',
+          'Worked on a brilliant medical education platform developed using the Nextjs Framework and WordPress where I:',
+          'Worked in an Agile-driven environment to effectively maintain project timelines and utilize available resources.',
+          'Designed and maintained streamlined, reusable and reliable code for use within the internal product repositories.',
+          'Designed and updated layouts to meet usability and performance requirements such as fast-loading pages.',
+          'Drafted design timeline specifications to create accurate project deadlines and set budgetary metrics.',
         ],
       },
       'Law Pavilion': {
@@ -42,8 +44,10 @@ export const siteConfig = {
         companyName: 'Law Pavilion',
         date: { from: 'July', to: 'January 2021' },
         description: [
-          'Collaborated with other student designers and engineers on pro-bono projects to create new brands, design systems, and websites for organizations in the community',
-          'Built and delivered technical solutions according to stakeholder business requirements',
+          'Worked on a robust Solutions application developed with the Angular Framework where I:',
+          'Architected major parts of the app to enhance the performance and load time of the application.',
+          'Developed reusable presentational and functional components used throughout the application.',
+          'Achieved lazy-loading of multiple components, separation of heavy computations to a worker instance.',
         ],
       },
       Hourly: {
@@ -53,10 +57,10 @@ export const siteConfig = {
         companyName: 'Hourly Technologies',
         date: { from: 'November', to: 'March 2020' },
         description: [
-          'Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more',
-          'Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements',
-          'Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders',
-          'Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship',
+          'Collaborated with teammates to develop highly efficient full-stack applications with React.js and Redux on the front-end, Node.js on the back-end and a React Native mobile application, where I:',
+          'Architected major parts of the front-end and back-end application to be more flexible, extensible and testable while implementing numerous features on these applications.',
+          'Facilitated the team’s adoption of the Scrum methodology by educating about and onboarding the practice and serving as Scrum master.',
+          'Architected and implemented the application state machine on the front-end Admin platform.',
         ],
       },
       Andela: {
@@ -66,10 +70,10 @@ export const siteConfig = {
         companyName: 'Andela',
         date: { from: 'Febuary', to: 'October 2019' },
         description: [
-          'Developed and styled interactive web applications for Apple Music using Ember and SCSS',
-          'Built and shipped the Apple Music Extension for Facebook Messenger leveraging third-party and internal API integrations',
-          "Architected and implemented the user interface of Apple Music's embeddable web player widget for in-browser user authorization and full song playback",
-          'Contributed extensively to the creation of MusicKit JS, a public-facing JavaScript SDK for embedding Apple Music players into web applications',
+          'Deliver high-quality, robust production code for a diverse array of projects for clients.',
+          'Assisted in architecting software solutions using third-party application program interfaces, services and software libraries.',
+          'Actively sought and assessed new technology solutions to challenges identified by clients.',
+          'Engaged in ongoing training and professional development as directed by the Company.',
         ],
       },
     },
