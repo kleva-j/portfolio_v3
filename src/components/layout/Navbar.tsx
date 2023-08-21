@@ -25,7 +25,7 @@ export const Navbar: FC = () => {
         >
           <a
             className="[counter-increment:navitem] before:[content:'0'counter(navitem)'.'] cursor-pointer font-mono text-[13px] text-[#ccd6f6] before:text-teal-500
-            hover:text-teal-500 before:mr-1"
+            hover:text-teal-500 before:mr-1 transition-colors duration-300"
             href={href}
           >
             {label}

@@ -15,7 +15,7 @@ export const Works = SectionWrapper(
           Some Things I&rsquo;ve Built
         </h2>
         <ul>
-          {works.slice(1, 4).map((item) => (
+          {works.slice(0, 3).map((item) => (
             <FeaturedCard key={item.title} {...item} />
           ))}
         </ul>
