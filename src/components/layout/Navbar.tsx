@@ -13,7 +13,7 @@ export const Navbar: FC = () => {
       animate="visible"
       variants={{ visible: { opacity: 1 }, hidden: { opacity: 0 } }}
       transition={{ delay: 0.35 }}
-      className="flex flex-wrap gap-x-6 [counter-reset:navitem]"
+      className="hidden sm:flex flex-wrap gap-x-6 [counter-reset:navitem]"
     >
       {navlinks.map(({ label, href, title }, index) => (
         <motion.li
