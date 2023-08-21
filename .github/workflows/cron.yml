@@ -1,0 +1,14 @@
+name: CRON Schedule for keeping api service awake
+
+on:
+  schedule:
+    - cron: "*/14 * * * *"
+
+jobs:
+  Ping:
+    name: "Ping api service"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping service
+        # run: curl https://codetips-cms.onrender.com/api/Projects
+        run: curl -Is https://codetips-cms.onrender.com/api/Projects | grep HTTP | cut -d ' ' -f2
