@@ -4,7 +4,8 @@ import { type FC } from 'react';
 import { siteConfig } from '@/libs/config/siteConfig';
 import { useElementSize } from '@/libs/hooks';
 
-const { navlinks } = siteConfig;
+const { links } = siteConfig;
+const { resume, navlinks } = links;
 
 interface SideNavProps {
   toggleOpen: () => void;
@@ -65,7 +66,9 @@ export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
           ))}
           <motion.div variants={variants} className="mt-4">
             <a
-              href="#"
+              href={resume}
+              target="_blank"
+              rel="noreferrer"
               className="font-mono text-teal-400 bg-transparent text-base outline-none w-fit border-2 border-teal-400 rounded-lg py-3 px-5 font-medium hover:bg-transparent hover:text-teal-400 cursor-pointer"
             >
               Resume

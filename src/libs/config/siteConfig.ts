@@ -1,12 +1,15 @@
 export const siteConfig = {
   title: 'Portfolio v3',
   description: 'My personal portfolio',
-  navlinks: [
-    { title: 'about', href: '/portfolio_v3/#about', label: 'About' },
-    { title: 'experience', href: '/portfolio_v3/#jobs', label: 'Experience' },
-    { title: 'work', href: '/portfolio_v3/#work', label: 'Work' },
-    { title: 'contact', href: '/portfolio_v3/#contact', label: 'Contact' },
-  ],
+  links: {
+    navlinks: [
+      { title: 'about', href: '/portfolio_v3/#about', label: 'About' },
+      { title: 'experience', href: '/portfolio_v3/#jobs', label: 'Experience' },
+      { title: 'work', href: '/portfolio_v3/#work', label: 'Work' },
+      { title: 'contact', href: '/portfolio_v3/#contact', label: 'Contact' },
+    ],
+    resume: 'https://docs.google.com/document/d/1EsygX33ZVzBAW6L1qMU773qcsVzCc5uRURDyb4U5yQE/edit?usp=sharing',
+  },
   content: {
     hero: {
       title: 'Hi, my name is',
@@ -16,9 +19,9 @@ export const siteConfig = {
     },
     about: {
       subTexts: [
-        'Hello! My name is Michael and I enjoy creating things that live on the internet. My interest in web development started back in 2015 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!',
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione reiciendis iure rerum ipsam at. Porro eveniet sunt ut assumenda. Velit modi voluptatem. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.',
-        'Voluptatem quas eligendi, sit mollitia odit, ut, voluptatibus quasi aut amet autem nobis laudantium eos quaerat provident culpa doloremque.',
+        'Hello! My name is Michael and I enjoy creating things that live on the internet. My journey into the thrilling world of software development started out as a teenage curiosity and quickly turned into an exhilarating adventure. I remember the excitement of tinkering with my first lines of code, trying to understand how this digital magic worked.',
+        `The moment I made my first program run successfully, displaying a scrolling marque text "I am a Jangilova" on the screen, I was hooked. It was like discovering a hidden superpower. As a teenager, I spent countless hours learning programming languages, watching online tutorials, and participating in coding challenges.`,
+        "The joy of solving problems, building apps, and seeing my creations come to life was incredibly rewarding. What started as a hobby soon became a dream – to harness the power of technology to make a positive impact on the world. Now, as I continue this journey into software, I can't help but feel like I'm unlocking the secrets of the digital universe one line of code at a time, and the future is brimming with endless possibilities.",
       ],
       technologies: ['TypeScript', 'React', 'Redux.js', 'Next.js', 'CSS/SASS/LESS', 'Tailwind', 'Git/Github', 'Figma'],
     },
