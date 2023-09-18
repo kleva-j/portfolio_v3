@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
-
 import { UseTabContext } from '@/components/Experience';
-import { ITabContext } from '@/libs/types';
+import { ITabContext } from '@/lib/types';
+import { motion } from 'framer-motion';
 
 export const TabContent = () => {
   const { selectedTab } = UseTabContext() as ITabContext;

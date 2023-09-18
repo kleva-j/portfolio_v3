@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion';
-import { ExternalLink, Folder } from 'lucide-react';
-import { FC } from 'react';
-
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/Card';
-import { Work } from '@/libs/types';
+import { ExternalLink, Folder } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Work } from '@/lib/types';
+import { FC } from 'react';
 
 export const ProjectList: FC<{ works: Work[] }> = ({ works }) => (
   <motion.section

@@ -1,10 +1,9 @@
-import { motion, useInView } from 'framer-motion';
-import { FC, useRef } from 'react';
-
+import { ToggleBar } from '@/components/layout/sidenav/ToggleBar';
 import { IAppContext, UseAppContext } from '@/components/App';
 import { Navbar } from '@/components/layout/Navbar';
-import { ToggleBar } from '@/components/layout/sidenav/ToggleBar';
+import { motion, useInView } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
+import { FC, useRef } from 'react';
 
 export const Header: FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);

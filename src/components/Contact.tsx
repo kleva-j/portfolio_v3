@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
-import { ChangeEvent, FormEvent, useRef, useState } from 'react';
 
+import { ChangeEvent, FormEvent, useRef, useState } from 'react';
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
 import { Button } from '@/components/ui/Button';
+import { motion } from 'framer-motion';
 
 const formEntry = { email: '', name: '', message: '' };
 
@@ -25,8 +25,8 @@ export const Contact = SectionWrapper(
 
       emailjs
         .send(
-          import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
           {
             from_name: form.name,
             to_name: 'Michael',
@@ -34,7 +34,7 @@ export const Contact = SectionWrapper(
             to_email: 'kasmickleva@gmail.com',
             message: form.message,
           },
-          import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
         )
         .then(
           () => {
@@ -57,9 +57,10 @@ export const Contact = SectionWrapper(
           onSubmit={handleSubmit}
           className="mt-12 p-6 rounded bg-card text-card-foreground flex flex-col gap-8 shadow-lg"
         >
-          <label htmlFor="" className="flex flex-col">
+          <label htmlFor="name" className="flex flex-col">
             <span className="font-medium mb-3">Your Name</span>
             <input
+              id="name"
               type="text"
               name="name"
               value={form.name}
@@ -68,9 +69,10 @@ export const Contact = SectionWrapper(
               className="py-2.5 px-6 placeholder:text-[#8892b0] rounded-lg outline-none border-none font-normal bg-[#0a182e6f]"
             />
           </label>
-          <label htmlFor="" className="flex flex-col">
+          <label htmlFor="email" className="flex flex-col">
             <span className="font-medium mb-3">Your Email</span>
             <input
+              id="email"
               type="email"
               name="email"
               value={form.email}
@@ -79,9 +81,10 @@ export const Contact = SectionWrapper(
               className="py-2.5 px-6 placeholder:text-[#8892b0] rounded-lg outline-none border-none font-normal bg-[#0a182e6f]"
             />
           </label>
-          <label htmlFor="" className="flex flex-col">
+          <label htmlFor="message" className="flex flex-col">
             <span className="font-medium mb-3">Your Message</span>
             <textarea
+              id="message"
               rows={5}
               name="message"
               value={form.message}

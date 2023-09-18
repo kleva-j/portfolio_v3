@@ -1,10 +1,9 @@
-import { createContext, useContext, useState } from 'react';
-
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
+import { createContext, useContext, useState } from 'react';
 import { TabContent } from '@/components/ui/TabContent';
+import { siteConfig } from '@/lib/config/siteConfig';
 import { TabList } from '@/components/ui/TabList';
-import { siteConfig } from '@/libs/config/siteConfig';
-import { ITabContext } from '@/libs/types';
+import { ITabContext } from '@/lib/types';
 
 const { experiences } = siteConfig.content;
 const tablist = Object.values(experiences);

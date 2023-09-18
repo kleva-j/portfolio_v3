@@ -1,8 +1,8 @@
-import { LayoutGroup, motion } from 'framer-motion';
 import type { FC } from 'react';
 
-import { siteConfig } from '@/libs/config/siteConfig';
-import { fadeIn } from '@/libs/utils/styles';
+import { siteConfig } from '@/lib/config/siteConfig';
+import { LayoutGroup, motion } from 'framer-motion';
+import { fadeIn } from '@/lib/utils';
 
 const { links } = siteConfig;
 const { resume, navlinks } = links;

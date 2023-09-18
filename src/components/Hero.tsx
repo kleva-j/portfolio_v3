@@ -1,7 +1,6 @@
+import { siteConfig } from '@/lib/config/siteConfig';
 import { motion } from 'framer-motion';
-
-import { siteConfig } from '@/libs/config/siteConfig';
-import { slideIn } from '@/libs/utils/styles';
+import { slideIn } from '@/lib/utils';
 
 const { hero } = siteConfig.content;
 

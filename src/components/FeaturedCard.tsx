@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+/* eslint-disable @next/next/no-img-element */
 import { ExternalLink, Github } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Work } from '@/lib/types';
 import { FC } from 'react';
-
-import { Work } from '@/libs/types';
 
 export const FeaturedCard: FC<Work> = (props) => {
   const { title, tagline, banner_img, github_url, url } = props;

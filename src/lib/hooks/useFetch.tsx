@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Work } from '@/libs/types';
+import { Work } from '@/lib/types';
 
 export const useFetch = (url: string) => {
   const [data, setData] = useState<Work[]>([]);

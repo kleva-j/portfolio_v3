@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
-import { cn } from '@/libs/utils';
-
-export const SectionWrapper = (Component: () => JSX.Element, idName?: string, className?: string) =>
-  function Hoc() {
+export const SectionWrapper = (Component: (props?: any) => JSX.Element, idName?: string, className?: string) =>
+  function Hoc(props?: any) {
     return (
       <motion.section
         animate="visible"
@@ -16,7 +15,7 @@ export const SectionWrapper = (Component: () => JSX.Element, idName?: string, cl
         <span className="relative -top-14" id={idName}>
           &nbsp;
         </span>
-        <Component />
+        <Component {...props} />
       </motion.section>
     );
   };

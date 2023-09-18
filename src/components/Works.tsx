@@ -1,13 +1,10 @@
-import { FeaturedCard } from '@/components/FeaturedCard';
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
+import { FeaturedCard } from '@/components/FeaturedCard';
 import { ProjectList } from '@/components/ProjectList';
-import { useFetch } from '@/libs/hooks';
-
-const url = import.meta.env.VITE_API_URL;
+import { Work } from '@/lib/types';
 
 export const Works = SectionWrapper(
-  () => {
-    const { data: works } = useFetch(url + '/api/Projects/');
+  (props: { projects: Work[] }) => {
 
     return (
       <div>
@@ -15,11 +12,11 @@ export const Works = SectionWrapper(
           Some Things I&rsquo;ve Built
         </h2>
         <ul>
-          {works.slice(0, 3).map((item) => (
+          {props.projects.slice(0, 3).map((item) => (
             <FeaturedCard key={item.title} {...item} />
           ))}
         </ul>
-        <ProjectList works={works} />
+        <ProjectList works={props.projects} />
       </div>
     );
   },

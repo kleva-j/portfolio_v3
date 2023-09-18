@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
 import { type FC } from 'react';
 
-import { siteConfig } from '@/libs/config/siteConfig';
-import { useElementSize } from '@/libs/hooks';
+import { siteConfig } from '@/lib/config/siteConfig';
+import { useElementSize } from '@/lib/hooks';
+import { motion } from 'framer-motion';
 
 const { links } = siteConfig;
 const { resume, navlinks } = links;

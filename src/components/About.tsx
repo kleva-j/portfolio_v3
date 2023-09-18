@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
-import { siteConfig } from '@/libs/config/siteConfig';
+import { siteConfig } from '@/lib/config/siteConfig';
 
 const { about } = siteConfig.content;
 

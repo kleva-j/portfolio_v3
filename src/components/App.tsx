@@ -1,24 +1,25 @@
-import { useCycle } from 'framer-motion';
-import { motion } from 'framer-motion';
-import { createContext, useContext } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
+'use client';
 
-import { About } from '@/components/About';
-import { Contact } from '@/components/Contact';
+import { createContext, useContext } from 'react';
+import { useCycle, motion } from 'framer-motion';
+
+import { RightFloatBar } from '@/components/RightFloatBar';
+import { LeftFloatBar } from '@/components/LeftFloatBar';
+import { SideNav } from '@/components/layout/sidenav';
 import { Experience } from '@/components/Experience';
-import { Hero } from '@/components/Hero';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
-import { SideNav } from '@/components/layout/sidenav';
-import { LeftFloatBar } from '@/components/LeftFloatBar';
-import { RightFloatBar } from '@/components/RightFloatBar';
+import { Contact } from '@/components/Contact';
 import { Works } from '@/components/Works';
+import { About } from '@/components/About';
+import { Hero } from '@/components/Hero';
+import { Work } from '@/lib/types';
 
 export interface IAppContext {
-  theme: string;
   toggleTheme: () => void;
-  isOpen: boolean;
   toggleOpen: () => void;
+  isOpen: boolean;
+  theme: string;
 }
 
 const AppContext = createContext<IAppContext | null>(null);
@@ -29,29 +30,27 @@ export function UseAppContext() {
   return context;
 }
 
-function App() {
+function App(props: { data: Work[] }) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const [theme, toggleTheme] = useCycle('light', 'dark');
 
   return (
-    <ErrorBoundary fallback={<div>Something went wrong</div>}>
-      <AppContext.Provider value={{ toggleOpen, isOpen, theme, toggleTheme }}>
-        <Header />
-        <SideNav toggleOpen={toggleOpen} isOpen={isOpen} />
-        <motion.section className={isOpen ? 'max-sm:blur-sm max-sm:brightness-75' : ''}>
-          <main className="max-w-[1600px] min-h-screen mx-auto px-6 sm:px-[50px] md:px-[100px] lg:px-[150px] items-center justify-center bg-[#0a182e] [counter-reset:section]">
-            <Hero />
-            <About />
-            <Experience />
-            <Works />
-            <Contact />
-          </main>
-          <Footer />
-        </motion.section>
-      </AppContext.Provider>
-      <LeftFloatBar />
+    <AppContext.Provider value={{ toggleOpen, isOpen, theme, toggleTheme }}>
+      <Header />
+      <SideNav toggleOpen={toggleOpen} isOpen={isOpen} />
+      <motion.section className={isOpen ? 'max-sm:blur-sm max-sm:brightness-75' : ''}>
+        <main className="max-w-[1600px] min-h-screen mx-auto px-6 sm:px-[50px] md:px-[100px] lg:px-[150px] items-center justify-center bg-[#0a182e] [counter-reset:section]">
+          <Hero />
+          <About />
+          <Experience />
+          <Works projects={props.data} />
+          <Contact />
+        </main>
+        <Footer />
+      </motion.section>
       <RightFloatBar />
-    </ErrorBoundary>
+      <LeftFloatBar />
+    </AppContext.Provider>
   );
 }
 

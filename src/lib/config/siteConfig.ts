@@ -3,10 +3,10 @@ export const siteConfig = {
   description: 'My personal portfolio',
   links: {
     navlinks: [
-      { title: 'about', href: '/portfolio_v3/#about', label: 'About' },
-      { title: 'experience', href: '/portfolio_v3/#jobs', label: 'Experience' },
-      { title: 'work', href: '/portfolio_v3/#work', label: 'Work' },
-      { title: 'contact', href: '/portfolio_v3/#contact', label: 'Contact' },
+      { title: 'about', href: '/#about', label: 'About' },
+      { title: 'experience', href: '/#jobs', label: 'Experience' },
+      { title: 'work', href: '/#work', label: 'Work' },
+      { title: 'contact', href: '/#contact', label: 'Contact' },
     ],
     resume: 'https://docs.google.com/document/d/1EsygX33ZVzBAW6L1qMU773qcsVzCc5uRURDyb4U5yQE/edit?usp=sharing',
   },
