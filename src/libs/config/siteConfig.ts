@@ -31,7 +31,7 @@ export const siteConfig = {
         label: 'aduro',
         role: 'Full-Stack Software Engineer',
         companyName: 'Aduro Creative',
-        date: { from: 'April', to: 'Febuary 2021' },
+        date: { from: 'April', to: 'Febuary 2022' },
         description: [
           'Worked on a brilliant medical education platform developed using the Nextjs Framework and WordPress where I:',
           'Worked in an Agile-driven environment to effectively maintain project timelines and utilize available resources.',
