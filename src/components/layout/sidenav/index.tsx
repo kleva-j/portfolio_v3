@@ -1,12 +1,12 @@
 "use client";
 
-import type { FC } from 'react';
+import type { IAppContext } from "@/components/context/AppContext";
+import type { FC } from "react";
 
-import { type IAppContext, UseAppContext } from '@/components/context/AppContext';
-
-import { siteConfig } from '@/lib/config/siteConfig';
-import { useElementSize } from '@/lib/hooks';
-import { motion } from 'framer-motion';
+import { UseAppContext } from "@/components/context/AppContext";
+import { siteConfig } from "@/lib/config/siteConfig";
+import { useElementSize } from "@/lib/hooks";
+import { motion } from "framer-motion";
 
 const { links } = siteConfig;
 const { resume, navlinks } = links;
@@ -17,11 +17,17 @@ const variants = {
     opacity: 1,
     transition: { y: { stiffness: 1000, velocity: -100 } },
   },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: { y: { stiffness: 1000 } },
-  },
+  closed: { y: 50, opacity: 0, transition: { y: { stiffness: 1000 } } },
+};
+
+const containerVariants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "100%" },
+};
+
+const unorderedListVariants = {
+  open: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } },
+  closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
 };
 
 export const SideNav: FC = () => {
@@ -30,27 +36,17 @@ export const SideNav: FC = () => {
 
   return (
     <motion.div
-      animate={isOpen ? 'open' : 'closed'}
-      variants={{
-        open: { opacity: 1, x: 0 },
-        closed: { opacity: 0, x: '100%' },
-      }}
-      custom={height}
+      animate={isOpen ? "open" : "closed"}
+      variants={containerVariants}
       ref={containerRef}
+      custom={height}
       className="sm:hidden h-[100vh] fixed top-0 right-0 z-10 w-3/4 shadow-xl"
     >
       <aside className="w-full h-full relative px-5">
         <motion.ul
-          animate={isOpen ? 'open' : 'closed'}
-          variants={{
-            open: {
-              transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-            },
-            closed: {
-              transition: { staggerChildren: 0.05, staggerDirection: -1 },
-            },
-          }}
           className="[counter-reset:section] z-10 absolute inset-1/4 flex flex-col gap-y-7 font-mono items-center text-center"
+          animate={isOpen ? "open" : "closed"}
+          variants={unorderedListVariants}
         >
           {navlinks.map(({ title, href, label }) => (
             <motion.li
@@ -76,22 +72,18 @@ export const SideNav: FC = () => {
           </motion.div>
         </motion.ul>
         <motion.div
-          animate={isOpen ? 'open' : 'closed'}
+          animate={isOpen ? "open" : "closed"}
           className="bg-[#112240] w-full h-full absolute top-0 right-0"
           variants={{
             open: (height = 1000) => ({
               clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-              transition: {
-                type: 'spring',
-                stiffness: 20,
-                restDelta: 2,
-              },
+              transition: { type: "spring", stiffness: 20, restDelta: 2 },
             }),
             closed: {
               clipPath: `circle(30px at ${width} 40px)`,
               transition: {
                 delay: 0.5,
-                type: 'spring',
+                type: "spring",
                 stiffness: 400,
                 damping: 40,
               },
