@@ -1,8 +1,15 @@
+"use client";
+
+import type { ComponentType, PropsWithChildren } from "react";
+import type { Project } from "@/lib/types";
+
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-export const SectionWrapper = (Component: (props?: any) => JSX.Element, idName?: string, className?: string) =>
-  function Hoc(props?: any) {
+type HocProps = PropsWithChildren & { projects?: Project[] };
+
+export const SectionWrapper = (Component: ComponentType<HocProps>, idName?: string, className?: string) =>
+  function Hoc(props?: HocProps) {
     return (
       <motion.section
         animate="visible"

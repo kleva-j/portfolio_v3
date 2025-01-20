@@ -1,3 +1,5 @@
+"use client";
+
 import { siteConfig } from '@/lib/config/siteConfig';
 import { motion } from 'framer-motion';
 import { slideIn } from '@/lib/utils';

@@ -1,9 +1,12 @@
-import emailjs from '@emailjs/browser';
+"use client";
 
-import { ChangeEvent, FormEvent, useRef, useState } from 'react';
+import { type ChangeEvent, type FormEvent, useRef, useState } from 'react';
+
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
+
+import emailjs from '@emailjs/browser';
 
 const formEntry = { email: '', name: '', message: '' };
 
