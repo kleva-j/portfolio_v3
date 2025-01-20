@@ -1,10 +1,12 @@
+"use client";
+
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/Card';
 import { ExternalLink, Folder } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Work } from '@/lib/types';
-import { FC } from 'react';
+import type { Project } from '@/lib/types';
+import type { FC } from 'react';
 
-export const ProjectList: FC<{ works: Work[] }> = ({ works }) => (
+export const ProjectList: FC<{ projects: Project[]; }> = ({ projects }) => (
   <motion.section
     className="py-[100px]"
     animate="visible"
@@ -17,7 +19,7 @@ export const ProjectList: FC<{ works: Work[] }> = ({ works }) => (
       Other Noteworthy Projects
     </h2>
     <ul className="grid grid-cols-autofill_sm lg:grid-cols-autofill gap-6 mt-[50px]">
-      {works.slice(3).map((item) => (
+      {projects.slice(3).map((item) => (
         <Card key={item.title} className="group hover:-translate-y-1.5 hover:shadow-xl transition duration-300">
           <CardHeader className="flex-row p-0 justify-between mb-[35px] z-10">
             <Folder size={40} strokeWidth={1.8} absoluteStrokeWidth className="text-teal-400" />

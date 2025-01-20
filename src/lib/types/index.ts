@@ -22,3 +22,5 @@ export type Work = {
   banner_img: string;
   github_url: string;
 };
+
+export type Project = Work;

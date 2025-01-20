@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
 import { siteConfig } from '@/lib/config/siteConfig';
 
@@ -14,7 +16,7 @@ export const About = SectionWrapper(
         <div className="block md:grid md:grid-cols-[3fr_2fr] gap-[50px]">
           <div className="flex flex-col gap-4">
             {about.subTexts.map((text, i) => (
-              <p className="text-[#8892b0] text-sm/6 md:text-base" key={i}>
+              <p className="text-[#8892b0] text-sm/6 md:text-base" key={`${text.substring(0, 8)}-${i}`}>
                 {text}
               </p>
             ))}

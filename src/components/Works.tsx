@@ -1,10 +1,15 @@
+"use client";
+
+import type { IAppContext } from '@/components/context/AppContext';
+
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
+import { UseAppContext } from '@/components/context/AppContext';
 import { FeaturedCard } from '@/components/FeaturedCard';
 import { ProjectList } from '@/components/ProjectList';
-import { Work } from '@/lib/types';
 
 export const Works = SectionWrapper(
-  (props: { projects: Work[] }) => {
+  () => {
+    const { projects } = UseAppContext() as IAppContext;
 
     return (
       <div>
@@ -12,11 +17,11 @@ export const Works = SectionWrapper(
           Some Things I&rsquo;ve Built
         </h2>
         <ul>
-          {props.projects.slice(0, 3).map((item) => (
+          {projects.slice(0, 3).map((item) => (
             <FeaturedCard key={item.title} {...item} />
           ))}
         </ul>
-        <ProjectList works={props.projects} />
+        <ProjectList projects={projects} />
       </div>
     );
   },

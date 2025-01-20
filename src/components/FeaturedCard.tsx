@@ -1,10 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
+import type { Project } from '@/lib/types';
+import type { FC } from 'react';
+
 import { ExternalLink, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Work } from '@/lib/types';
-import { FC } from 'react';
 
-export const FeaturedCard: FC<Work> = (props) => {
+export const FeaturedCard: FC<Project> = (props) => {
   const { title, tagline, banner_img, github_url, url } = props;
 
   return (
