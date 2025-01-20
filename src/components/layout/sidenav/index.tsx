@@ -1,4 +1,8 @@
-import { type FC } from 'react';
+"use client";
+
+import type { FC } from 'react';
+
+import { type IAppContext, UseAppContext } from '@/components/context/AppContext';
 
 import { siteConfig } from '@/lib/config/siteConfig';
 import { useElementSize } from '@/lib/hooks';
@@ -6,11 +10,6 @@ import { motion } from 'framer-motion';
 
 const { links } = siteConfig;
 const { resume, navlinks } = links;
-
-interface SideNavProps {
-  toggleOpen: () => void;
-  isOpen: boolean;
-}
 
 const variants = {
   open: {
@@ -25,7 +24,8 @@ const variants = {
   },
 };
 
-export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
+export const SideNav: FC = () => {
+  const { isOpen, toggleOpen } = UseAppContext() as IAppContext;
   const [containerRef, { height, width }] = useElementSize();
 
   return (
