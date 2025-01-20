@@ -1,30 +1,30 @@
-import { UseTabContext } from '@/components/Experience';
-import { ITabContext } from '@/lib/types';
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import type { TabItem } from "@/lib/types";
+import type { JSX } from "react";
 
-export const TabList = () => {
-  const { tablist, selectedTab, setSelectedTab } = UseTabContext() as ITabContext;
+import { motion } from "framer-motion";
+
+export interface TabListProps {
+  render: (className: string, item: TabItem) => JSX.Element;
+  selectedTab: TabItem;
+  list: TabItem[];
+}
+
+export const TabList = ({ render, selectedTab, list }: TabListProps) => {
   const { label, index } = selectedTab;
 
   return (
     <nav className="mb-[50px] max-sm:w-full overflow-x-auto no-scrollbar relative sm:min-w-max">
-      <ul className="flex w-full sm:flex-col" aria-label="Job tabs" role="tablist">
-        {tablist.map((item) => {
-          const cName = item.label === label ? 'selected text-teal-500' : 'text-[#8892B0]';
-          return (
-            <li
-              key={item.label}
-              className={cn(
-                'relative text-center sm:text-start sm:pl-[15px] cursor-pointer w-[128px] py-[10px] whitespace-nowrap capitalize font-mono text-[13px] hover:bg-[#112240] max-sm:border-b-2 sm:border-l-2 max-sm:border-b-[#233554] sm:border-l-[#233554] min-w-[128px] transition-colors',
-                cName
-              )}
-              onClick={() => setSelectedTab(item)}
-            >
-              {item.label}
-            </li>
-          );
-        })}
+      <ul
+        className="flex w-full sm:flex-col"
+        aria-label="Job tabs"
+        role="tablist"
+      >
+        {list.map((item) =>
+          render(
+            item.label === label ? "selected text-teal-500" : "text-[#8892B0]",
+            item,
+          ),
+        )}
       </ul>
       <motion.div
         animate={{ x: `${index * 128}px` }}

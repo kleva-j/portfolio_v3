@@ -1,20 +1,15 @@
+"use client";
+
 import { SectionWrapper } from '@/components/hoc/SectionWrapper';
-import { createContext, useContext, useState } from 'react';
 import { TabContent } from '@/components/ui/TabContent';
 import { siteConfig } from '@/lib/config/siteConfig';
 import { TabList } from '@/components/ui/TabList';
-import { ITabContext } from '@/lib/types';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const { experiences } = siteConfig.content;
+
 const tablist = Object.values(experiences);
-
-export const TabContext = createContext<ITabContext | null>(null);
-
-export function UseTabContext() {
-  const context = useContext(TabContext);
-  if (context === undefined) throw new Error(`UseTabContext must be used within a ContextProvider`);
-  return context;
-}
 
 export const Experience = SectionWrapper(
   () => {
@@ -26,10 +21,21 @@ export const Experience = SectionWrapper(
           Where I&rsquo;ve Worked
         </h2>
         <div className="flex flex-col sm:flex-row">
-          <TabContext.Provider value={{ selectedTab, tablist, setSelectedTab }}>
-            <TabList />
-            <TabContent />
-          </TabContext.Provider>
+          <>
+            <TabList list={tablist} selectedTab={selectedTab} render={(className, item) => (
+              <li
+                key={`${item.label}-${item.description}`}
+                className={cn(
+                  'relative text-center sm:text-start sm:pl-[15px] cursor-pointer w-[128px] py-[10px] whitespace-nowrap capitalize font-mono text-[13px] hover:bg-[#112240] max-sm:border-b-2 sm:border-l-2 max-sm:border-b-[#233554] sm:border-l-[#233554] min-w-[128px] transition-colors',
+                  className
+                )}
+                onClick={() => setSelectedTab(item)}
+              >
+                {item.label}
+              </li>
+            )} />
+            <TabContent selectedTab={selectedTab} />
+          </>
         </div>
       </div>
     );
