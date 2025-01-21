@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { siteConfig } from '@/libs/config/siteConfig';
 import { useElementSize } from '@/libs/hooks';
@@ -18,11 +18,14 @@ const variants = {
     opacity: 1,
     transition: { y: { stiffness: 1000, velocity: -100 } },
   },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: { y: { stiffness: 1000 } },
-  },
+  closed: { y: 50, opacity: 0, transition: { y: { stiffness: 1000 } } },
+};
+
+const containerVarřiants = { open: { opacity: 1, x: 0 }, closed: { opacity: 0, x: '100%' } };
+
+const unorderedListVariants = {
+  open: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } },
+  closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
 };
 
 export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
@@ -30,26 +33,16 @@ export const SideNav: FC<SideNavProps> = ({ isOpen, toggleOpen }) => {
 
   return (
     <motion.div
+      className="sm:hidden h-[100vh] fixed top-0 right-0 z-10 w-3/4 shadow-xl"
       animate={isOpen ? 'open' : 'closed'}
-      variants={{
-        open: { opacity: 1, x: 0 },
-        closed: { opacity: 0, x: '100%' },
-      }}
+      variants={containerVarřiants}
       custom={height}
       ref={containerRef}
-      className="sm:hidden h-[100vh] fixed top-0 right-0 z-10 w-3/4 shadow-xl"
     >
       <aside className="w-full h-full relative px-5">
         <motion.ul
           animate={isOpen ? 'open' : 'closed'}
-          variants={{
-            open: {
-              transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-            },
-            closed: {
-              transition: { staggerChildren: 0.05, staggerDirection: -1 },
-            },
-          }}
+          variants={unorderedListVariants}
           className="[counter-reset:section] z-10 absolute inset-1/4 flex flex-col gap-y-7 font-mono items-center text-center"
         >
           {navlinks.map(({ title, href, label }) => (
