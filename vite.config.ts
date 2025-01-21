@@ -11,13 +11,4 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  test: {
-    globals: true,
-    environment: 'happy-dom',
-    setupFiles: './src/setupTests.ts',
-    coverage: {
-      provider: 'c8',
-      reporter: ['html', 'lcov'],
-    },
-  },
 });
